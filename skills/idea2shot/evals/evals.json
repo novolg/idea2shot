@@ -1,0 +1,26 @@
+{
+  "skill_name": "idea2shot",
+  "evals": [
+    {
+      "id": 1,
+      "name": "fast-veo-lighthouse",
+      "prompt": "Turn this into Veo 3 shots, about 30 seconds, 16:9. Run straight through, don't stop to ask me anything: a lighthouse keeper finds a phone ringing inside the lamp room.",
+      "expected_output": "Fast-mode run (01, 04, 07, 08, 10) with stage files, four records, an audit verdict, and shots.md containing per-shot Veo prompts plus fallback prompts.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "dialogue-runway-sisters",
+      "prompt": "Dialogue scene for Runway Gen-4, vertical 9:16, ~45s. Two estranged sisters split their late mother's jewelry at a kitchen table; the younger one wants to sell everything, the older one won't say why she wants to keep the ring. Don't wait for my approvals, just make your best calls.",
+      "expected_output": "Dialogue-scene mode (03-10) with speakable lines carried by visible behavior (the ring motive externalized), dialogue beats, coverage, edit/sound plan, audit, and shots.md for Runway in 9:16.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "audit-kling-plan",
+      "prompt": "Audit this shot plan before I burn Kling credits on it:\nSH1 (5s) Wide: Maria stands in the empty train station, feeling the weight of every goodbye she never said.\nSH2 (5s) Close-up: She remembers her father, realizing he was right all along.\nSH3 (8s) The camera flies through the station, out the window, over the city and into her childhood bedroom where her younger self is crying.\nSH4 (5s) Medium: Maria decides to forgive him and finally feels free.",
+      "expected_output": "Single-stage run of 10 (auditor) only: flags invisible interior states in SH1/SH2/SH4 and the infeasible continuous move in SH3, with severity, repairs, go/no-go, and repaired Kling-ready prompts or plan.",
+      "files": []
+    }
+  ]
+}

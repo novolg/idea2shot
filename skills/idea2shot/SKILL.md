@@ -52,7 +52,7 @@ For each stage in the chosen mode:
 
 1. Read the stage file. Its ```text block is your instruction set for this step — adopt the role, follow its INPUT / TASK / OUTPUT (or RETURN) structure exactly.
 2. Give it only what its INPUT asks for: the approved outputs of earlier stages plus the relevant records. Do not forward rejected alternatives — they leak abandoned ideas into later stages.
-3. Write the output to `productions/<slug>/NN-<stage-name>.md` (relative to the current working directory; `<slug>` is a short kebab-case project name).
+3. Write the output to `productions/<slug>/NN-<stage-name>.md` (relative to the current working directory; `<slug>` is a short kebab-case project name). Write every file — including the JSON record and `shots.md` — directly with your file-writing tool. Don't generate them with scripts: the content is prose and structure you are already composing, so a script only adds time and can trip sandbox or permission limits.
 4. Show the user a short summary of the output (not the whole file) and the decision it needs, then wait for approval. If a stage offers options (e.g. 01 gives several concept directions), the user picks; recommend one.
 5. Update the persistent records (section 5).
 
@@ -71,12 +71,15 @@ Maintain these in `productions/<slug>/records/` and update them after every stag
 
 The JSON is internal plumbing for consistency. The prompt compiler (08) still emits the prose format the target model expects.
 
+**Target model not covered by stage 08** (e.g. Kling, Sora, Hailuo): use 08's generic mode, then apply what you know of that model's limits — valid clip lengths (Kling: 5 s or 10 s), native audio or silent, text-to-video vs image-to-video inputs, start/end-frame support, lip-sync options. Plan shot durations to fit valid lengths from stage 07 onward, not just at compile time. List these limits as assumptions in `shots.md` so the user can check them against their plan tier, since model features change between releases.
+
 ## 6. Audit and repair
 
 Stage 10 returns a go/no-go plus issues with severity and "affected downstream files".
 
 - **Go** → deliver (section 7).
 - **No-go** → apply the smallest repair to the named stage file, re-run only the affected downstream stages, then re-audit. Repair locally; don't rewrite approved material that already works.
+- Before changing a stage file, copy it to `NN-<stage-name>.v1.md` (`.v2.md` on a second round). The user can then diff what the audit changed and roll back a repair they don't like. Save each audit round too (`10-production-auditor.md` for the latest, `.v1.md` for the earlier one).
 - After two failed repair rounds, stop and show the user the remaining critical issues — they likely need a creative decision, not another pass.
 
 ## 7. Deliver
