@@ -1,0 +1,22 @@
+{
+  "beat_id": "SC01_DB01",
+  "duration_sec": 0,
+  "speaker": "",
+  "listener": "",
+  "playable_action": "to ____ the listener",
+  "physical_task": "",
+  "line": "",
+  "delivery": {
+    "pace": "",
+    "volume": "",
+    "breath": "",
+    "articulation": "",
+    "interruption_or_pause": ""
+  },
+  "listener_reaction": "",
+  "blocking_change": "",
+  "sound_context": "",
+  "coverage": "speaker|listener|two-shot|OTS|profile|off-screen|insert|no-cut",
+  "audience_information": "",
+  "visual_replacement": ""
+}
