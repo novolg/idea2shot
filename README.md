@@ -20,6 +20,19 @@ No code, no dependencies, no env vars — just Markdown prompts and JSON schemas
 3. Review the output. Pass only the approved version to the next stage.
 4. Repeat until `10-production-auditor.md` passes the plan.
 
+### With Claude Code (skill)
+
+`skills/idea2shot/` is a Claude Code skill that runs the whole pipeline for you: picks a mode, runs each stage, keeps the four records, audits, and writes final shot prompts to `productions/<slug>/shots.md`.
+
+Install (symlink keeps it in sync with the repo):
+
+```bash
+git clone https://github.com/novolg/idea2shot.git
+ln -s "$(pwd)/idea2shot/skills/idea2shot" ~/.claude/skills/idea2shot
+```
+
+Then ask Claude something like *"Turn this idea into Veo shots: a lighthouse keeper finds a phone ringing inside the lamp room"*, or call it directly with `/idea2shot`. It also handles single stages: *"audit my shot plan"*, *"compile these shots for Runway"*.
+
 ## Stages
 
 | # | File | Job |
