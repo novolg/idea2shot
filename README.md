@@ -7,7 +7,7 @@
   </picture>
 </p>
 
-A model-agnostic prompt pipeline that turns a raw idea into generation-ready AI-video shots. Each stage is a standalone prompt (film director, performance director, blocking, dialogue, coverage, prompt compiler, editor, auditor) that converts literary intent into photographable action, playable performance, shot design, sound, and edit logic. Output targets LTX, Runway, Veo, or any generic text/image-to-video model.
+A model-agnostic prompt pipeline that turns a raw idea into generation-ready AI-video shots. Each stage is a standalone prompt (film director, performance director, blocking, dialogue, coverage, prompt compiler, editor, auditor) that converts literary intent into photographable action, playable performance, shot design, sound, and edit logic. Output targets any generic text/image-to-video model.
 
 No code, no dependencies, no env vars — just Markdown prompts and JSON schemas.
 
